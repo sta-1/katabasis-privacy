@@ -1,0 +1,176 @@
+Countries or Regions,Currency Code,Price,May Adjust Automatically
+Türkiye,TRY,999.99,N
+Afghanistan,USD,24.99,N
+Albania,USD,24.99,N
+Algeria,USD,24.99,N
+Angola,USD,24.99,N
+Anguilla,USD,24.99,N
+Antigua and Barbuda,USD,24.99,N
+Argentina,USD,24.99,N
+Armenia,USD,24.99,N
+Australia,AUD,39.99,N
+Austria,EUR,24.99,N
+Azerbaijan,USD,22.99,Y
+Bahamas,USD,24.99,N
+Bahrain,USD,29.99,N
+Barbados,USD,24.99,N
+Belarus,USD,22.99,Y
+Belgium,EUR,24.99,N
+Belize,USD,24.99,N
+Benin,USD,17.99,N
+Bermuda,USD,24.99,N
+Bhutan,USD,24.99,N
+Bolivia,USD,19.99,Y
+Bosnia and Herzegovina,EUR,24.99,N
+Botswana,USD,17.99,N
+Brazil,BRL,129.9,Y
+British Virgin Islands,USD,24.99,N
+Brunei,USD,24.99,N
+Bulgaria,EUR,24.99,N
+Burkina Faso,USD,17.99,N
+Cambodia,USD,24.99,N
+Cameroon,USD,17.99,N
+Canada,CAD,29.99,N
+Cape Verde,USD,24.99,N
+Cayman Islands,USD,24.99,N
+Chad,USD,17.99,N
+Chile,CLP,22990,Y
+China mainland,CNY,168.0,N
+Colombia,COP,99900.0,Y
+"Congo, Democratic Republic of the",USD,19.99,Y
+"Congo, Republic of the",USD,19.99,Y
+Costa Rica,USD,24.99,N
+Côte d’Ivoire,USD,22.99,Y
+Croatia,EUR,24.99,N
+Cyprus,EUR,24.99,N
+Czech Republic,CZK,499.0,Y
+Denmark,DKK,179.0,Y
+Dominica,USD,19.99,Y
+Dominican Republic,USD,19.99,Y
+Ecuador,USD,19.99,Y
+Egypt,EGP,999.99,Y
+El Salvador,USD,19.99,Y
+Estonia,EUR,22.99,Y
+Eswatini,USD,19.99,Y
+Fiji,USD,19.99,Y
+Finland,EUR,24.99,N
+France,EUR,24.99,N
+Gabon,USD,24.99,N
+Gambia,USD,19.99,Y
+Georgia,USD,22.99,Y
+Germany,EUR,24.99,N
+Ghana,USD,22.99,Y
+Greece,EUR,22.99,Y
+Grenada,USD,19.99,Y
+Guatemala,USD,19.99,Y
+Guinea-Bissau,USD,19.99,Y
+Guyana,USD,19.99,Y
+Honduras,USD,19.99,Y
+Hong Kong,HKD,168.0,N
+Hungary,HUF,7990,N
+Iceland,USD,22.99,Y
+India,INR,1999.0,Y
+Indonesia,IDR,349000,Y
+Iraq,USD,19.99,Y
+Ireland,EUR,24.99,N
+Israel,ILS,79.9,N
+Italy,EUR,22.99,Y
+Jamaica,USD,24.99,N
+Japan,JPY,3000,Y
+Jordan,USD,19.99,Y
+Kazakhstan,KZT,11990.0,Y
+Kenya,USD,22.99,Y
+"Korea, Republic of",KRW,29000,Y
+Kosovo,EUR,22.99,Y
+Kuwait,USD,24.99,N
+Kyrgyzstan,USD,19.99,Y
+Laos,USD,24.99,N
+Latvia,EUR,22.99,Y
+Lebanon,USD,19.99,Y
+Liberia,USD,19.99,Y
+Libya,USD,19.99,Y
+Lithuania,EUR,22.99,Y
+Luxembourg,EUR,22.99,Y
+Macau,USD,19.99,Y
+Madagascar,USD,19.99,Y
+Malawi,USD,19.99,Y
+Malaysia,MYR,99.9,Y
+Maldives,USD,24.99,N
+Mali,USD,19.99,Y
+Malta,EUR,22.99,Y
+Mauritania,USD,19.99,Y
+Mauritius,USD,22.99,Y
+Mexico,MXN,399.0,Y
+Micronesia,USD,24.99,N
+Moldova,USD,22.99,Y
+Mongolia,USD,19.99,Y
+Montenegro,EUR,19.99,Y
+Montserrat,USD,19.99,Y
+Morocco,USD,19.99,Y
+Mozambique,USD,19.99,Y
+Myanmar,USD,19.99,Y
+Namibia,USD,19.99,Y
+Nauru,USD,19.99,Y
+Nepal,USD,22.99,Y
+Netherlands,EUR,22.99,Y
+New Zealand,NZD,39.99,Y
+Nicaragua,USD,19.99,Y
+Niger,USD,19.99,Y
+Nigeria,NGN,29900.0,Y
+North Macedonia,USD,19.99,Y
+Norway,NOK,249.0,Y
+Oman,USD,19.99,Y
+Pakistan,PKR,4900.0,Y
+Palau,USD,19.99,Y
+Panama,USD,19.99,Y
+Papua New Guinea,USD,19.99,Y
+Paraguay,USD,19.99,Y
+Peru,PEN,89.9,Y
+Philippines,PHP,1290.0,Y
+Poland,PLN,99.99,Y
+Portugal,EUR,22.99,Y
+Qatar,QAR,99.99,N
+Romania,RON,99.99,Y
+Russia,RUB,1790.0,Y
+Rwanda,USD,19.99,Y
+São Tomé and Príncipe,USD,19.99,Y
+Saudi Arabia,SAR,99.99,N
+Senegal,USD,22.99,Y
+Serbia,EUR,22.99,Y
+Seychelles,USD,19.99,Y
+Sierra Leone,USD,19.99,Y
+Singapore,SGD,29.98,Y
+Slovakia,EUR,22.99,Y
+Slovenia,EUR,22.99,Y
+Solomon Islands,USD,19.99,Y
+South Africa,ZAR,399.99,Y
+Spain,EUR,22.99,Y
+Sri Lanka,USD,19.99,Y
+St. Kitts and Nevis,USD,19.99,Y
+St. Lucia,USD,19.99,Y
+St. Vincent and the Grenadines,USD,19.99,Y
+Suriname,USD,19.99,Y
+Sweden,SEK,249.0,Y
+Switzerland,CHF,20.0,N
+Taiwan,TWD,690,Y
+Tajikistan,USD,19.99,Y
+Tanzania,TZS,59900.0,Y
+Thailand,THB,699.0,Y
+Tonga,USD,19.99,Y
+Trinidad and Tobago,USD,19.99,Y
+Tunisia,USD,19.99,Y
+Turkmenistan,USD,14.99,N
+Turks and Caicos Islands,USD,19.99,Y
+Uganda,USD,22.99,Y
+Ukraine,USD,22.99,Y
+United Arab Emirates,AED,99.99,N
+United Kingdom,GBP,19.99,Y
+United States,USD,24.99,N
+Uruguay,USD,19.99,Y
+Uzbekistan,USD,19.99,Y
+Vanuatu,USD,19.99,Y
+Venezuela,USD,19.99,Y
+Vietnam,VND,599000,Y
+Yemen,USD,19.99,Y
+Zambia,USD,22.99,Y
+Zimbabwe,USD,22.99,Y

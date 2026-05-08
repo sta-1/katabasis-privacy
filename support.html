@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Katabasis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #0a0812;
+      --iron: #1a1620;
+      --amber-hi: #e8952a;
+      --amber-dim: #8a5210;
+      --amber: #c87a1a;
+      --text: #d4ccd8;
+      --text-dim: #8a7e90;
+      --border: #2e2838;
+    }
+    body { background: var(--black); color: var(--text); font-family: 'Courier New', Courier, monospace; line-height: 1.7; }
+    a { color: var(--amber-hi); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 16px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); }
+    .nav-links { display: flex; gap: 24px; font-size: 11px; letter-spacing: 2px; }
+    .nav-links a { color: var(--text-dim); }
+    .nav-links a:hover { color: var(--amber-hi); }
+    .content { max-width: 760px; margin: 0 auto; padding: 60px 40px; }
+    h1 { font-size: 22px; letter-spacing: 4px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 12px; }
+    .subtitle { font-size: 13px; color: var(--text-dim); margin-bottom: 48px; letter-spacing: 0.5px; }
+    .contact-box {
+      background: var(--iron); border: 1px solid var(--border); border-radius: 6px;
+      padding: 32px; margin-bottom: 48px; position: relative; overflow: hidden;
+    }
+    .contact-box::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--amber-dim), transparent);
+    }
+    .contact-label { font-size: 11px; letter-spacing: 3px; color: var(--amber); text-transform: uppercase; margin-bottom: 12px; }
+    .contact-email { font-size: 16px; color: var(--amber-hi); letter-spacing: 1px; }
+    .contact-note { font-size: 12px; color: var(--text-dim); margin-top: 10px; }
+    h2 { font-size: 13px; letter-spacing: 3px; color: var(--amber-hi); text-transform: uppercase; margin: 40px 0 20px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .faq-item { margin-bottom: 28px; }
+    .faq-q { font-size: 13px; color: var(--text); font-weight: bold; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .faq-a { font-size: 13px; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-dim); letter-spacing: 1px; margin-top: 40px; }
+    footer a { color: var(--text-dim); margin: 0 12px; }
+    footer a:hover { color: var(--amber-hi); }
+    @media (max-width: 600px) { nav { padding: 16px 20px; } .content { padding: 40px 20px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">KATABASIS</a>
+    <div class="nav-links">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </nav>
+  <div class="content">
+    <h1>Support</h1>
+    <p class="subtitle">We're here to help. Reach out anytime and we'll respond as soon as possible.</p>
+
+    <div class="contact-box">
+      <div class="contact-label">Contact</div>
+      <div class="contact-email"><a href="mailto:support@katabasis.pro">support@katabasis.pro</a></div>
+      <div class="contact-note">We typically respond within 1–2 business days.</div>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">How do credits work?</div>
+      <div class="faq-a">New accounts receive 10 free credits upon registration. Each dream analysis costs 1 credit, voice playback costs 0.5 credits, and a monthly report costs 5 credits. Additional credits can be purchased from the app.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I get a refund for unused credits?</div>
+      <div class="faq-a">All purchases are subject to Apple App Store or Google Play refund policies. Please contact Apple or Google directly for refund requests. We are unable to issue refunds outside of these policies.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I delete my account?</div>
+      <div class="faq-a">You can delete your account and all associated data at any time from Settings → Delete Account within the app. Deletion is permanent and cannot be undone.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is my dream data private?</div>
+      <div class="faq-a">Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. It is not used to train AI models and is not shared with or sold to third parties.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">The app isn't working. What should I do?</div>
+      <div class="faq-a">Try closing and reopening the app. If the issue persists, try logging out and back in from Settings. If you're still experiencing problems, contact us at the email above with a description of the issue and your device model.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Which languages are supported?</div>
+      <div class="faq-a">Katabasis is fully available in English, Turkish, German, French, Spanish, Russian, Chinese (Simplified), Korean, Japanese, and Greek.</div>
+    </div>
+  </div>
+  <footer>
+    <a href="/">Home</a>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy Policy</a>
+    <br><br>© 2026 Katabasis
+  </footer>
+</body>
+</html>

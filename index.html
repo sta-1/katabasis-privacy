@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katabasis — Dream Analysis</title>
+  <meta name="description" content="Decode your dreams. Map your unconscious. Katabasis uses AI to provide deep psychological analysis of your dreams." />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #0a0812;
+      --iron: #1a1620;
+      --amber: #c87a1a;
+      --amber-hi: #e8952a;
+      --amber-dim: #8a5210;
+      --text: #d4ccd8;
+      --text-dim: #8a7e90;
+      --border: #2e2838;
+    }
+    body { background-color: var(--black); color: var(--text); font-family: 'Courier New', Courier, monospace; line-height: 1.6; }
+    a { color: var(--amber-hi); text-decoration: none; }
+    a:hover { color: var(--text); }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 18px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); }
+    .nav-links { display: flex; gap: 32px; font-size: 12px; letter-spacing: 2px; }
+    .nav-links a { color: var(--text-dim); }
+    .nav-links a:hover { color: var(--amber-hi); }
+
+    .hero {
+      text-align: center; padding: 100px 40px 80px;
+      border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(200, 122, 26, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 4px; color: var(--amber); margin-bottom: 20px; text-transform: uppercase; }
+    .hero-title { font-size: clamp(36px, 6vw, 72px); font-weight: bold; letter-spacing: 8px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 12px; }
+    .hero-subtitle { font-size: clamp(13px, 2vw, 16px); letter-spacing: 3px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 32px; }
+    .hero-desc { font-size: 15px; color: var(--text-dim); max-width: 540px; margin: 0 auto 48px; line-height: 1.8; }
+    .badge-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .badge {
+      display: inline-block; padding: 12px 28px; border: 1px solid var(--amber-dim);
+      border-radius: 4px; font-size: 12px; letter-spacing: 2px; color: var(--amber-hi);
+      text-transform: uppercase; transition: all 0.2s;
+    }
+    .badge:hover { background: var(--amber-dim); color: var(--black); }
+    .badge-secondary { border-color: var(--border); color: var(--text-dim); }
+    .badge-secondary:hover { background: var(--border); color: var(--text); }
+
+    .features { padding: 80px 40px; max-width: 1000px; margin: 0 auto; }
+    .section-label { text-align: center; font-size: 11px; letter-spacing: 4px; color: var(--amber-dim); text-transform: uppercase; margin-bottom: 48px; }
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .feature-card {
+      background: var(--iron); border: 1px solid var(--border); border-radius: 6px;
+      padding: 28px; position: relative; overflow: hidden;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--amber-dim), transparent);
+    }
+    .feature-icon { font-size: 20px; margin-bottom: 16px; color: var(--amber); }
+    .feature-title { font-size: 12px; font-weight: bold; letter-spacing: 3px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 10px; }
+    .feature-desc { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
+
+    .credits-section {
+      background: var(--iron); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 80px 40px; text-align: center;
+    }
+    .credits-grid { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 40px; }
+    .credit-item { border: 1px solid var(--border); border-radius: 4px; padding: 20px 32px; min-width: 160px; }
+    .credit-amount { font-size: 28px; font-weight: bold; color: var(--amber-hi); letter-spacing: 2px; }
+    .credit-label { font-size: 11px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; margin-top: 6px; }
+
+    footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); }
+    .footer-links { display: flex; justify-content: center; gap: 32px; margin-bottom: 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    .footer-links a { color: var(--text-dim); }
+    .footer-links a:hover { color: var(--amber-hi); }
+    .footer-copy { font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      .hero { padding: 60px 20px; }
+      .features { padding: 60px 20px; }
+      .credits-section { padding: 60px 20px; }
+      footer { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="nav-logo">KATABASIS</span>
+    <div class="nav-links">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-eyebrow">AI Dream Analysis</p>
+    <h1 class="hero-title">Katabasis</h1>
+    <p class="hero-subtitle">Dream Analysis</p>
+    <p class="hero-desc">
+      Every night, your mind speaks in symbols.<br>
+      Katabasis listens — and helps you understand what it's saying.
+    </p>
+    <div class="badge-row">
+      <a href="#" class="badge">App Store</a>
+      <a href="#" class="badge badge-secondary">Google Play</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <p class="section-label">Features</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">◈</div>
+        <div class="feature-title">Deep Analysis</div>
+        <div class="feature-desc">Two-step AI analysis tailored to your specific dream experience, drawing from Jungian and other major psychological schools.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◎</div>
+        <div class="feature-title">Symbol Map</div>
+        <div class="feature-desc">Track recurring symbols across your dreams and discover what your unconscious keeps returning to over time.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◷</div>
+        <div class="feature-title">Emotional Timeline</div>
+        <div class="feature-desc">Visualize the emotional tone of your dreams across weeks and months to identify deeper patterns.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◉</div>
+        <div class="feature-title">Monthly Reports</div>
+        <div class="feature-desc">Receive a synthesized overview of your dream patterns — a map of your unconscious built over time.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">▷</div>
+        <div class="feature-title">Voice Playback</div>
+        <div class="feature-desc">Have your analysis read aloud with natural text-to-speech audio, ideal for journaling and reflection.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">◌</div>
+        <div class="feature-title">10 Languages</div>
+        <div class="feature-desc">Fully supported in English, Turkish, German, French, Spanish, Russian, Chinese, Korean, Japanese, and Greek.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="credits-section">
+    <p class="section-label">Simple Credit System</p>
+    <p style="color: var(--text-dim); font-size: 13px; letter-spacing: 1px;">New accounts receive 10 credits to get started.</p>
+    <div class="credits-grid">
+      <div class="credit-item">
+        <div class="credit-amount">1</div>
+        <div class="credit-label">Dream Analysis</div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-amount">0.5</div>
+        <div class="credit-label">Voice Playback</div>
+      </div>
+      <div class="credit-item">
+        <div class="credit-amount">5</div>
+        <div class="credit-label">Monthly Report</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+    <p class="footer-copy">© 2026 Katabasis</p>
+  </footer>
+</body>
+</html>

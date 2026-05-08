@@ -1,0 +1,5 @@
+
+
+adres:supabase
+proje:katabasis
+Şifre: Yalikavak1!
