@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reset Password — Katabasis</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --black: #0a0812;
+      --iron: #1a1620;
+      --amber-hi: #e8952a;
+      --amber-dim: #8a5210;
+      --amber: #c87a1a;
+      --text: #d4ccd8;
+      --text-dim: #8a7e90;
+      --border: #2e2838;
+      --danger: #c97070;
+    }
+    body { background: var(--black); color: var(--text); font-family: 'Courier New', Courier, monospace; line-height: 1.7; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--amber-hi); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 16px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); }
+    .nav-links { display: flex; gap: 24px; font-size: 11px; letter-spacing: 2px; }
+    .nav-links a { color: var(--text-dim); }
+    .nav-links a:hover { color: var(--amber-hi); }
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+    .card {
+      max-width: 480px; width: 100%;
+      background: var(--iron); border: 1px solid var(--border); border-radius: 6px;
+      padding: 48px 32px; position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--amber-dim), transparent);
+    }
+    h1 { font-size: 18px; letter-spacing: 3px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 24px; text-align: center; }
+    p { font-size: 13px; color: var(--text-dim); margin-bottom: 20px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-size: 11px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px; }
+    input[type="password"] {
+      width: 100%; padding: 12px 14px;
+      background: var(--black); border: 1px solid var(--border); border-radius: 4px;
+      color: var(--text); font-family: inherit; font-size: 14px;
+    }
+    input[type="password"]:focus { outline: none; border-color: var(--amber-dim); }
+    button {
+      width: 100%; padding: 14px; margin-top: 16px;
+      background: transparent; border: 1px solid var(--amber-dim);
+      color: var(--amber-hi); cursor: pointer;
+      letter-spacing: 2px; font-size: 12px; text-transform: uppercase;
+      border-radius: 4px; font-family: inherit;
+    }
+    button:hover:not(:disabled) { background: var(--amber-dim); color: var(--black); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { margin-top: 16px; padding: 12px; border-radius: 4px; font-size: 13px; text-align: center; display: none; }
+    .status.success { background: rgba(232, 149, 42, 0.1); border: 1px solid var(--amber-dim); color: var(--amber-hi); display: block; }
+    .status.error { background: rgba(201, 112, 112, 0.1); border: 1px solid var(--danger); color: var(--danger); display: block; }
+    .hint { font-size: 11px; color: var(--text-dim); margin-top: 8px; }
+    footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+    footer a { color: var(--text-dim); margin: 0 12px; }
+    @media (max-width: 600px) { nav { padding: 16px 20px; } .card { padding: 32px 20px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">KATABASIS</a>
+    <div class="nav-links">
+      <a href="/support">Support</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h1>Reset Password</h1>
+      <p id="intro">Enter a new password for your Katabasis account.</p>
+
+      <form id="form">
+        <div class="field">
+          <label for="pw1">New Password</label>
+          <input type="password" id="pw1" autocomplete="new-password" minlength="6" required />
+          <div class="hint">At least 6 characters</div>
+        </div>
+        <div class="field">
+          <label for="pw2">Confirm New Password</label>
+          <input type="password" id="pw2" autocomplete="new-password" minlength="6" required />
+        </div>
+        <button type="submit" id="submit">Update Password</button>
+      </form>
+
+      <div class="status" id="status"></div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/support">Support</a>
+    <a href="/privacy">Privacy Policy</a>
+    <br><br>© 2026 Katabasis
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    // Public Supabase credentials — anon key is designed for client-side use.
+    const SUPABASE_URL = "https://tvomonepnxucrcqeylec.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR2b21vbmVwbnh1Y3JjcWV5bGVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc4MTA3ODUsImV4cCI6MjA5MzM4Njc4NX0.J0UlUREtfpUSAwPqeRB8xSt9uiNWAXzeE86z0X9_s9I";
+
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+    });
+
+    const status = document.getElementById("status");
+    const form = document.getElementById("form");
+    const submitBtn = document.getElementById("submit");
+
+    function show(kind, msg) {
+      status.className = "status " + kind;
+      status.textContent = msg;
+    }
+
+    // Parse the recovery session from the URL hash (Supabase sends
+    // #access_token=...&refresh_token=...&type=recovery).
+    const hash = new URLSearchParams(window.location.hash.slice(1));
+    const hashError = hash.get("error_description") || hash.get("error");
+    const accessToken = hash.get("access_token");
+    const refreshToken = hash.get("refresh_token");
+    const type = hash.get("type");
+
+    async function init() {
+      if (hashError) {
+        form.style.display = "none";
+        show("error", decodeURIComponent(hashError.replace(/\+/g, " ")));
+        return;
+      }
+      if (!accessToken || !refreshToken || type !== "recovery") {
+        form.style.display = "none";
+        show("error", "Invalid or expired reset link. Please request a new one from the app.");
+        return;
+      }
+      const { error } = await sb.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
+      if (error) {
+        form.style.display = "none";
+        show("error", "Could not validate reset link: " + error.message);
+      }
+    }
+    init();
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const pw1 = document.getElementById("pw1").value;
+      const pw2 = document.getElementById("pw2").value;
+      if (pw1.length < 6) {
+        show("error", "Password must be at least 6 characters.");
+        return;
+      }
+      if (pw1 !== pw2) {
+        show("error", "Passwords do not match.");
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Updating…";
+      const { error } = await sb.auth.updateUser({ password: pw1 });
+      if (error) {
+        show("error", "Could not update password: " + error.message);
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Update Password";
+      } else {
+        form.style.display = "none";
+        show("success", "Password updated successfully. You can now open Katabasis and sign in with your new password.");
+        // Clear the recovery session so the access token doesn't linger
+        sb.auth.signOut().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>
