@@ -26,9 +26,15 @@
       padding: 20px 40px; border-bottom: 1px solid var(--border);
     }
     .nav-logo { font-size: 18px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); }
-    .nav-links { display: flex; gap: 32px; font-size: 12px; letter-spacing: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 12px; letter-spacing: 2px; }
     .nav-links a { color: var(--text-dim); }
     .nav-links a:hover { color: var(--amber-hi); }
+    .lang-select {
+      background: var(--iron); color: var(--amber-hi); border: 1px solid var(--border);
+      border-radius: 4px; font-family: inherit; font-size: 11px; letter-spacing: 1px;
+      padding: 5px 8px; cursor: pointer;
+    }
+    .lang-select:hover { border-color: var(--amber-dim); }
 
     .hero {
       text-align: center; padding: 100px 40px 80px;
@@ -97,86 +103,89 @@
   <nav>
     <span class="nav-logo">KATABASIS</span>
     <div class="nav-links">
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
+      <a href="/support" data-i18n="nav.support">Support</a>
+      <a href="/privacy" data-i18n="nav.privacy">Privacy</a>
+      <select id="langSelect" class="lang-select" aria-label="Language"></select>
     </div>
   </nav>
 
   <section class="hero">
-    <p class="hero-eyebrow">AI Dream Analysis</p>
+    <p class="hero-eyebrow" data-i18n="hero.eyebrow">AI Dream Analysis</p>
     <h1 class="hero-title">Katabasis</h1>
-    <p class="hero-subtitle">Dream Analysis</p>
-    <p class="hero-desc">
+    <p class="hero-subtitle" data-i18n="hero.subtitle">Dream Analysis</p>
+    <p class="hero-desc" data-i18n-html="hero.desc">
       Every night, your mind speaks in symbols.<br>
       Katabasis listens — and helps you understand what it's saying.
     </p>
     <div class="badge-row">
-      <a href="#" class="badge">App Store</a>
-      <a href="#" class="badge badge-secondary">Google Play</a>
+      <a href="#" class="badge" data-i18n="cta.appStore">App Store</a>
+      <a href="#" class="badge badge-secondary" data-i18n="cta.googlePlay">Google Play</a>
     </div>
   </section>
 
   <section class="features">
-    <p class="section-label">Features</p>
+    <p class="section-label" data-i18n="feat.label">Features</p>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="feature-icon">◈</div>
-        <div class="feature-title">Deep Analysis</div>
-        <div class="feature-desc">Two-step AI analysis tailored to your specific dream experience, drawing from Jungian and other major psychological schools.</div>
+        <div class="feature-title" data-i18n="feat1.title">Deep Analysis</div>
+        <div class="feature-desc" data-i18n="feat1.desc">Two-step AI analysis tailored to your specific dream experience, drawing from Jungian and other major psychological schools.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">◎</div>
-        <div class="feature-title">Symbol Map</div>
-        <div class="feature-desc">Track recurring symbols across your dreams and discover what your unconscious keeps returning to over time.</div>
+        <div class="feature-title" data-i18n="feat2.title">Symbol Map</div>
+        <div class="feature-desc" data-i18n="feat2.desc">Track recurring symbols across your dreams and discover what your unconscious keeps returning to over time.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">◷</div>
-        <div class="feature-title">Emotional Timeline</div>
-        <div class="feature-desc">Visualize the emotional tone of your dreams across weeks and months to identify deeper patterns.</div>
+        <div class="feature-title" data-i18n="feat3.title">Emotional Timeline</div>
+        <div class="feature-desc" data-i18n="feat3.desc">Visualize the emotional tone of your dreams across weeks and months to identify deeper patterns.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">◉</div>
-        <div class="feature-title">Monthly Reports</div>
-        <div class="feature-desc">Receive a synthesized overview of your dream patterns — a map of your unconscious built over time.</div>
+        <div class="feature-title" data-i18n="feat4.title">Monthly Reports</div>
+        <div class="feature-desc" data-i18n="feat4.desc">Receive a synthesized overview of your dream patterns — a map of your unconscious built over time.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">▷</div>
-        <div class="feature-title">Voice Playback</div>
-        <div class="feature-desc">Have your analysis read aloud with natural text-to-speech audio, ideal for journaling and reflection.</div>
+        <div class="feature-title" data-i18n="feat5.title">Voice Playback</div>
+        <div class="feature-desc" data-i18n="feat5.desc">Have your analysis read aloud with natural text-to-speech audio, ideal for journaling and reflection.</div>
       </div>
       <div class="feature-card">
         <div class="feature-icon">◌</div>
-        <div class="feature-title">10 Languages</div>
-        <div class="feature-desc">Fully supported in English, Turkish, German, French, Spanish, Russian, Chinese, Korean, Japanese, and Greek.</div>
+        <div class="feature-title" data-i18n="feat6.title">10 Languages</div>
+        <div class="feature-desc" data-i18n="feat6.desc">Fully supported in English, Turkish, German, French, Spanish, Russian, Chinese, Korean, Japanese, and Greek.</div>
       </div>
     </div>
   </section>
 
   <section class="credits-section">
-    <p class="section-label">Simple Credit System</p>
-    <p style="color: var(--text-dim); font-size: 13px; letter-spacing: 1px;">New accounts receive 10 credits to get started.</p>
+    <p class="section-label" data-i18n="credits.label">Simple Credit System</p>
+    <p style="color: var(--text-dim); font-size: 13px; letter-spacing: 1px;" data-i18n="credits.intro">New accounts receive 10 credits to get started.</p>
     <div class="credits-grid">
       <div class="credit-item">
         <div class="credit-amount">1</div>
-        <div class="credit-label">Dream Analysis</div>
+        <div class="credit-label" data-i18n="credit1.label">Dream Analysis</div>
       </div>
       <div class="credit-item">
         <div class="credit-amount">0.5</div>
-        <div class="credit-label">Voice Playback</div>
+        <div class="credit-label" data-i18n="credit2.label">Voice Playback</div>
       </div>
       <div class="credit-item">
         <div class="credit-amount">5</div>
-        <div class="credit-label">Monthly Report</div>
+        <div class="credit-label" data-i18n="credit3.label">Monthly Report</div>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-links">
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy Policy</a>
+      <a href="/support" data-i18n="nav.support">Support</a>
+      <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
     </div>
-    <p class="footer-copy">© 2026 Katabasis</p>
+    <p class="footer-copy" data-i18n="footer.copy">© 2026 Katabasis</p>
   </footer>
+
+  <script src="/assets/i18n.js" defer></script>
 </body>
 </html>

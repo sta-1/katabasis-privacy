@@ -1,65 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Katabasis</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --black: #0a0812;
-      --iron: #1a1620;
-      --amber-hi: #e8952a;
-      --amber-dim: #8a5210;
-      --text: #d4ccd8;
-      --text-dim: #8a7e90;
-      --border: #2e2838;
-    }
-    body { background: var(--black); color: var(--text); font-family: 'Courier New', Courier, monospace; line-height: 1.7; }
-    a { color: var(--amber-hi); }
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 40px; border-bottom: 1px solid var(--border);
-    }
-    .nav-logo { font-size: 16px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); text-decoration: none; }
-    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 11px; letter-spacing: 2px; }
-    .nav-links a { color: var(--text-dim); text-decoration: none; }
-    .nav-links a:hover { color: var(--amber-hi); }
-    .lang-select {
-      background: var(--iron); color: var(--amber-hi); border: 1px solid var(--border);
-      border-radius: 4px; font-family: inherit; font-size: 11px; letter-spacing: 1px;
-      padding: 5px 8px; cursor: pointer;
-    }
-    .lang-select:hover { border-color: var(--amber-dim); }
-    .content { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
-    h1 { font-size: 24px; letter-spacing: 4px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 8px; }
-    .updated { font-size: 11px; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 40px; }
-    h2 { font-size: 14px; letter-spacing: 3px; color: var(--amber-hi); text-transform: uppercase; margin: 36px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
-    h3 { font-size: 12px; letter-spacing: 2px; color: var(--text); text-transform: uppercase; margin: 24px 0 8px; }
-    h4 { font-size: 12px; letter-spacing: 1px; color: var(--text-dim); margin: 16px 0 6px; }
-    p { font-size: 13px; color: var(--text-dim); margin-bottom: 12px; }
-    ul { padding-left: 20px; margin-bottom: 12px; }
-    li { font-size: 13px; color: var(--text-dim); margin-bottom: 6px; }
-    strong { color: var(--text); }
-    footer { text-align: center; padding: 32px; border-top: 1px solid var(--border); font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
-    footer a { color: var(--text-dim); text-decoration: none; margin: 0 12px; }
-    footer a:hover { color: var(--amber-hi); }
-    @media (max-width: 600px) { nav { padding: 16px 20px; } .content { padding: 40px 20px; } }
-  </style>
-</head>
-<body>
-  <nav>
-    <a href="/" class="nav-logo">KATABASIS</a>
-    <div class="nav-links">
-      <a href="/support" data-i18n="nav.support">Support</a>
-      <a href="/privacy" data-i18n="nav.privacy">Privacy</a>
-      <select id="langSelect" class="lang-select" aria-label="Language"></select>
-    </div>
-  </nav>
-  <div class="content">
-    <h1 data-i18n="privacy.title">Privacy Policy</h1>
-    <p class="updated" data-i18n="privacy.updated">Last updated: May 30, 2026</p>
-    <div data-i18n-html="privacy.body">
+registerLang("en", {
+  // meta
+  "meta.title": "Katabasis — Dream Analysis",
+  "meta.desc": "Decode your dreams. Map your unconscious. Katabasis uses AI to provide deep psychological analysis of your dreams.",
+  // nav / footer
+  "nav.support": "Support",
+  "nav.privacy": "Privacy",
+  "footer.home": "Home",
+  "footer.support": "Support",
+  "footer.privacy": "Privacy Policy",
+  "footer.copy": "© 2026 Katabasis",
+  // landing — hero
+  "hero.eyebrow": "AI Dream Analysis",
+  "hero.subtitle": "Dream Analysis",
+  "hero.desc": "Every night, your mind speaks in symbols.<br>Katabasis listens — and helps you understand what it's saying.",
+  "cta.appStore": "App Store",
+  "cta.googlePlay": "Google Play",
+  // landing — features
+  "feat.label": "Features",
+  "feat1.title": "Deep Analysis",
+  "feat1.desc": "Two-step AI analysis tailored to your specific dream experience, drawing from Jungian and other major psychological schools.",
+  "feat2.title": "Symbol Map",
+  "feat2.desc": "Track recurring symbols across your dreams and discover what your unconscious keeps returning to over time.",
+  "feat3.title": "Emotional Timeline",
+  "feat3.desc": "Visualize the emotional tone of your dreams across weeks and months to identify deeper patterns.",
+  "feat4.title": "Monthly Reports",
+  "feat4.desc": "Receive a synthesized overview of your dream patterns — a map of your unconscious built over time.",
+  "feat5.title": "Voice Playback",
+  "feat5.desc": "Have your analysis read aloud with natural text-to-speech audio, ideal for journaling and reflection.",
+  "feat6.title": "10 Languages",
+  "feat6.desc": "Fully supported in English, Turkish, German, French, Spanish, Russian, Chinese, Korean, Japanese, and Greek.",
+  // landing — credits
+  "credits.label": "Simple Credit System",
+  "credits.intro": "New accounts receive 10 credits to get started.",
+  "credit1.label": "Dream Analysis",
+  "credit2.label": "Voice Playback",
+  "credit3.label": "Monthly Report",
+  // support
+  "support.title": "Support",
+  "support.subtitle": "We're here to help. Reach out anytime and we'll respond as soon as possible.",
+  "support.contactLabel": "Contact",
+  "support.contactNote": "We typically respond within 1–2 business days.",
+  "support.faqHeading": "Frequently Asked Questions",
+  "support.q1": "How do credits work?",
+  "support.a1": "New accounts receive 10 free credits upon registration. Each dream analysis costs 1 credit, voice playback costs 0.5 credits, and a monthly report costs 5 credits. Additional credits can be purchased from the app.",
+  "support.q2": "Can I get a refund for unused credits?",
+  "support.a2": "All purchases are subject to Apple App Store or Google Play refund policies. Please contact Apple or Google directly for refund requests. We are unable to issue refunds outside of these policies.",
+  "support.q3": "How do I delete my account?",
+  "support.a3": "You can delete your account and all associated data at any time from Settings → Delete Account within the app. Deletion is permanent and cannot be undone.",
+  "support.q4": "Is my dream data private?",
+  "support.a4": "Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. It is not used to train AI models and is not shared with or sold to third parties.",
+  "support.q5": "The app isn't working. What should I do?",
+  "support.a5": "Try closing and reopening the app. If the issue persists, try logging out and back in from Settings. If you're still experiencing problems, contact us at the email above with a description of the issue and your device model.",
+  "support.q6": "Which languages are supported?",
+  "support.a6": "Katabasis is fully available in English, Turkish, German, French, Spanish, Russian, Chinese (Simplified), Korean, Japanese, and Greek.",
+  // privacy
+  "privacy.title": "Privacy Policy",
+  "privacy.updated": "Last updated: May 30, 2026",
+  "privacy.body": `
     <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
     <p>We use Your Personal Data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
     <h2>Interpretation and Definitions</h2>
@@ -152,16 +149,5 @@
     <p>If you have any questions about this Privacy Policy, You can contact us:</p>
     <ul>
       <li>By email: <a href="mailto:support@katabasis.pro">support@katabasis.pro</a></li>
-    </ul>
-    </div>
-  </div>
-  <footer>
-    <a href="/" data-i18n="footer.home">Home</a>
-    <a href="/support" data-i18n="nav.support">Support</a>
-    <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
-    <br><br><span data-i18n="footer.copy">© 2026 Katabasis</span>
-  </footer>
-
-  <script src="/assets/i18n.js" defer></script>
-</body>
-</html>
+    </ul>`
+});

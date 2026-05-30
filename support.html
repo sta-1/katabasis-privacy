@@ -24,9 +24,15 @@
       padding: 20px 40px; border-bottom: 1px solid var(--border);
     }
     .nav-logo { font-size: 16px; font-weight: bold; letter-spacing: 4px; color: var(--amber-hi); }
-    .nav-links { display: flex; gap: 24px; font-size: 11px; letter-spacing: 2px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 11px; letter-spacing: 2px; }
     .nav-links a { color: var(--text-dim); }
     .nav-links a:hover { color: var(--amber-hi); }
+    .lang-select {
+      background: var(--iron); color: var(--amber-hi); border: 1px solid var(--border);
+      border-radius: 4px; font-family: inherit; font-size: 11px; letter-spacing: 1px;
+      padding: 5px 8px; cursor: pointer;
+    }
+    .lang-select:hover { border-color: var(--amber-dim); }
     .content { max-width: 760px; margin: 0 auto; padding: 60px 40px; }
     h1 { font-size: 22px; letter-spacing: 4px; color: var(--amber-hi); text-transform: uppercase; margin-bottom: 12px; }
     .subtitle { font-size: 13px; color: var(--text-dim); margin-bottom: 48px; letter-spacing: 0.5px; }
@@ -55,57 +61,60 @@
   <nav>
     <a href="/" class="nav-logo">KATABASIS</a>
     <div class="nav-links">
-      <a href="/support">Support</a>
-      <a href="/privacy">Privacy</a>
+      <a href="/support" data-i18n="nav.support">Support</a>
+      <a href="/privacy" data-i18n="nav.privacy">Privacy</a>
+      <select id="langSelect" class="lang-select" aria-label="Language"></select>
     </div>
   </nav>
   <div class="content">
-    <h1>Support</h1>
-    <p class="subtitle">We're here to help. Reach out anytime and we'll respond as soon as possible.</p>
+    <h1 data-i18n="support.title">Support</h1>
+    <p class="subtitle" data-i18n="support.subtitle">We're here to help. Reach out anytime and we'll respond as soon as possible.</p>
 
     <div class="contact-box">
-      <div class="contact-label">Contact</div>
+      <div class="contact-label" data-i18n="support.contactLabel">Contact</div>
       <div class="contact-email"><a href="mailto:support@katabasis.pro">support@katabasis.pro</a></div>
-      <div class="contact-note">We typically respond within 1–2 business days.</div>
+      <div class="contact-note" data-i18n="support.contactNote">We typically respond within 1–2 business days.</div>
     </div>
 
-    <h2>Frequently Asked Questions</h2>
+    <h2 data-i18n="support.faqHeading">Frequently Asked Questions</h2>
 
     <div class="faq-item">
-      <div class="faq-q">How do credits work?</div>
-      <div class="faq-a">New accounts receive 10 free credits upon registration. Each dream analysis costs 1 credit, voice playback costs 0.5 credits, and a monthly report costs 5 credits. Additional credits can be purchased from the app.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Can I get a refund for unused credits?</div>
-      <div class="faq-a">All purchases are subject to Apple App Store or Google Play refund policies. Please contact Apple or Google directly for refund requests. We are unable to issue refunds outside of these policies.</div>
+      <div class="faq-q" data-i18n="support.q1">How do credits work?</div>
+      <div class="faq-a" data-i18n="support.a1">New accounts receive 10 free credits upon registration. Each dream analysis costs 1 credit, voice playback costs 0.5 credits, and a monthly report costs 5 credits. Additional credits can be purchased from the app.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">How do I delete my account?</div>
-      <div class="faq-a">You can delete your account and all associated data at any time from Settings → Delete Account within the app. Deletion is permanent and cannot be undone.</div>
+      <div class="faq-q" data-i18n="support.q2">Can I get a refund for unused credits?</div>
+      <div class="faq-a" data-i18n="support.a2">All purchases are subject to Apple App Store or Google Play refund policies. Please contact Apple or Google directly for refund requests. We are unable to issue refunds outside of these policies.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Is my dream data private?</div>
-      <div class="faq-a">Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. It is not used to train AI models and is not shared with or sold to third parties.</div>
+      <div class="faq-q" data-i18n="support.q3">How do I delete my account?</div>
+      <div class="faq-a" data-i18n="support.a3">You can delete your account and all associated data at any time from Settings → Delete Account within the app. Deletion is permanent and cannot be undone.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">The app isn't working. What should I do?</div>
-      <div class="faq-a">Try closing and reopening the app. If the issue persists, try logging out and back in from Settings. If you're still experiencing problems, contact us at the email above with a description of the issue and your device model.</div>
+      <div class="faq-q" data-i18n="support.q4">Is my dream data private?</div>
+      <div class="faq-a" data-i18n="support.a4">Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. It is not used to train AI models and is not shared with or sold to third parties.</div>
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Which languages are supported?</div>
-      <div class="faq-a">Katabasis is fully available in English, Turkish, German, French, Spanish, Russian, Chinese (Simplified), Korean, Japanese, and Greek.</div>
+      <div class="faq-q" data-i18n="support.q5">The app isn't working. What should I do?</div>
+      <div class="faq-a" data-i18n="support.a5">Try closing and reopening the app. If the issue persists, try logging out and back in from Settings. If you're still experiencing problems, contact us at the email above with a description of the issue and your device model.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" data-i18n="support.q6">Which languages are supported?</div>
+      <div class="faq-a" data-i18n="support.a6">Katabasis is fully available in English, Turkish, German, French, Spanish, Russian, Chinese (Simplified), Korean, Japanese, and Greek.</div>
     </div>
   </div>
   <footer>
-    <a href="/">Home</a>
-    <a href="/support">Support</a>
-    <a href="/privacy">Privacy Policy</a>
-    <br><br>© 2026 Katabasis
+    <a href="/" data-i18n="footer.home">Home</a>
+    <a href="/support" data-i18n="nav.support">Support</a>
+    <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
+    <br><br><span data-i18n="footer.copy">© 2026 Katabasis</span>
   </footer>
+
+  <script src="/assets/i18n.js" defer></script>
 </body>
 </html>
