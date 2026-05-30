@@ -1,0 +1,63 @@
+name: Site Health
+
+# Safeguards for katabasis.pro:
+#  1) CNAME guard   — on every push, fail if the CNAME file that binds the custom
+#                     domain is missing or wrong (this is exactly what broke the
+#                     site once — the GitHub Pages custom-domain binding was lost).
+#  2) Uptime check  — every 30 min, curl the live site + key assets and fail the
+#                     run if anything is down. GitHub emails the repo owner on a
+#                     failed run, so you learn within minutes, not from a user.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "*/30 * * * *"   # every 30 minutes (GitHub may delay during peak load)
+  workflow_dispatch: {}        # allow manual run from the Actions tab
+
+jobs:
+  cname-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify CNAME file binds katabasis.pro
+        run: |
+          if [ ! -f CNAME ]; then
+            echo "::error::CNAME file is missing from the repo root — custom domain will break (404 on katabasis.pro)."
+            exit 1
+          fi
+          content="$(tr -d '[:space:]' < CNAME)"
+          if [ "$content" != "katabasis.pro" ]; then
+            echo "::error::CNAME content is '$content', expected 'katabasis.pro'."
+            exit 1
+          fi
+          echo "CNAME OK: $content"
+
+  uptime:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'   # skip right after a push: the new build may still be deploying
+    steps:
+      - name: Check live site + key assets
+        run: |
+          fail=0
+          check() {
+            url="$1"; marker="$2"
+            code=$(curl -s -o /tmp/body -w "%{http_code}" --max-time 25 "$url" || echo "000")
+            if [ "$code" != "200" ]; then
+              echo "::error::$url -> HTTP $code (expected 200)"; fail=1; return
+            fi
+            if [ -n "$marker" ] && ! grep -q "$marker" /tmp/body; then
+              echo "::error::$url returned 200 but is missing expected marker '$marker' (content may be broken)"; fail=1; return
+            fi
+            echo "OK: $url ($code)"
+          }
+          # A failed HTTPS handshake (e.g. certificate problem) makes curl return 000 -> caught below.
+          check "https://katabasis.pro/"               "langSelect"
+          check "https://katabasis.pro/support"        "langSelect"
+          check "https://katabasis.pro/privacy"        "Brevo"
+          check "https://katabasis.pro/assets/i18n.js" "registerLang"
+          if [ "$fail" -ne 0 ]; then
+            echo "::error::katabasis.pro health check FAILED — see annotations above."
+            exit 1
+          fi
+          echo "All health checks passed."
