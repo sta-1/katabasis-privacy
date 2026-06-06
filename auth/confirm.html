@@ -66,10 +66,10 @@
 
   <main>
     <div class="card" id="card">
-      <div class="icon">✓</div>
+      <div class="icon" id="icon">✓</div>
       <h1 id="title">Email Verified</h1>
       <p id="message">Your email address has been confirmed. You can now open Katabasis and sign in.</p>
-      <a href="katabasis://" class="open-app">Open App</a>
+      <a href="katabasis://" class="open-app" id="openApp">Open App</a>
     </div>
   </main>
 
@@ -81,6 +81,31 @@
   </footer>
 
   <script>
+    // ── Localization ──────────────────────────────────────────────────────
+    // The static HTML above is the English fallback (shown if JS is disabled).
+    // Language source, in priority order: ?lang= query (authoritative — only
+    // present if the backend later appends it to email_redirect_to), then the
+    // browser/phone language, then English. We deliberately do NOT depend on
+    // the ?lang param so we never break the working confirm flow if Supabase's
+    // redirect allow-list rejects query params.
+    const I18N = {
+      en: { ok: "Email Verified", okMsg: "Your email address has been confirmed. You can now open Katabasis and sign in.", open: "Open App", err: "Verification Failed", errMsg: "This link is invalid or has expired. Please request a new confirmation email from the app." },
+      tr: { ok: "E-posta Doğrulandı", okMsg: "E-posta adresin onaylandı. Artık Katabasis'i açıp giriş yapabilirsin.", open: "Uygulamayı Aç", err: "Doğrulama Başarısız", errMsg: "Bu bağlantı geçersiz veya süresi dolmuş. Lütfen uygulamadan yeni bir onay e-postası iste." },
+      de: { ok: "E-Mail bestätigt", okMsg: "Deine E-Mail-Adresse wurde bestätigt. Du kannst Katabasis jetzt öffnen und dich anmelden.", open: "App öffnen", err: "Bestätigung fehlgeschlagen", errMsg: "Dieser Link ist ungültig oder abgelaufen. Bitte fordere in der App eine neue Bestätigungs-E-Mail an." },
+      fr: { ok: "E-mail confirmé", okMsg: "Votre adresse e-mail a été confirmée. Vous pouvez maintenant ouvrir Katabasis et vous connecter.", open: "Ouvrir l'app", err: "Échec de la confirmation", errMsg: "Ce lien est invalide ou a expiré. Veuillez demander un nouvel e-mail de confirmation depuis l'application." },
+      es: { ok: "Correo verificado", okMsg: "Tu correo electrónico ha sido confirmado. Ya puedes abrir Katabasis e iniciar sesión.", open: "Abrir app", err: "Error de verificación", errMsg: "Este enlace no es válido o ha caducado. Solicita un nuevo correo de confirmación desde la aplicación." },
+      ru: { ok: "Почта подтверждена", okMsg: "Ваш адрес электронной почты подтверждён. Теперь вы можете открыть Katabasis и войти.", open: "Открыть приложение", err: "Ошибка подтверждения", errMsg: "Эта ссылка недействительна или устарела. Запросите новое письмо подтверждения в приложении." },
+      zh: { ok: "邮箱已验证", okMsg: "您的电子邮箱已确认。现在可以打开 Katabasis 并登录。", open: "打开应用", err: "验证失败", errMsg: "此链接无效或已过期。请在应用中重新获取确认邮件。" },
+      ko: { ok: "이메일 인증 완료", okMsg: "이메일 주소가 확인되었습니다. 이제 Katabasis를 열고 로그인할 수 있습니다.", open: "앱 열기", err: "인증 실패", errMsg: "이 링크가 유효하지 않거나 만료되었습니다. 앱에서 새 인증 이메일을 요청하세요." },
+      ja: { ok: "メール認証完了", okMsg: "メールアドレスが確認されました。Katabasis を開いてログインできます。", open: "アプリを開く", err: "認証に失敗しました", errMsg: "このリンクは無効か期限切れです。アプリから新しい確認メールをリクエストしてください。" },
+      el: { ok: "Το email επιβεβαιώθηκε", okMsg: "Η διεύθυνση email σου επιβεβαιώθηκε. Μπορείς τώρα να ανοίξεις το Katabasis και να συνδεθείς.", open: "Άνοιγμα εφαρμογής", err: "Η επιβεβαίωση απέτυχε", errMsg: "Αυτός ο σύνδεσμος δεν είναι έγκυρος ή έχει λήξει. Ζήτησε νέο email επιβεβαίωσης από την εφαρμογή." },
+    };
+    const qLang = new URLSearchParams(window.location.search).get("lang");
+    const navLang = (navigator.language || "en").slice(0, 2).toLowerCase();
+    const lang = I18N[qLang] ? qLang : (I18N[navLang] ? navLang : "en");
+    const t = I18N[lang];
+    document.documentElement.lang = lang;
+
     // Supabase returns errors in the URL hash as #error=...&error_description=...
     // (e.g., when the link has expired or has already been used).
     const hash = new URLSearchParams(window.location.hash.slice(1));
@@ -88,10 +113,15 @@
     if (error) {
       const card = document.getElementById("card");
       card.classList.add("error");
-      document.querySelector(".icon").textContent = "!";
-      document.getElementById("title").textContent = "Verification Failed";
-      document.getElementById("message").textContent = decodeURIComponent(error.replace(/\+/g, " "));
+      document.getElementById("icon").textContent = "!";
+      document.getElementById("title").textContent = t.err;
+      document.getElementById("message").textContent = t.errMsg;
+    } else {
+      document.getElementById("title").textContent = t.ok;
+      document.getElementById("message").textContent = t.okMsg;
     }
+    document.getElementById("openApp").textContent = t.open;
+    document.title = t.ok + " — Katabasis";
   </script>
 </body>
 </html>
