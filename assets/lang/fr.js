@@ -42,7 +42,7 @@ registerLang("fr", {
   "support.q3": "Comment supprimer mon compte ?",
   "support.a3": "Vous pouvez supprimer votre compte et toutes les données associées à tout moment depuis Réglages → Supprimer le compte dans l'application. La suppression est définitive et irréversible.",
   "support.q4": "Mes données de rêve sont-elles privées ?",
-  "support.a4": "Oui. Le contenu de vos rêves est transmis à notre fournisseur d'IA (Anthropic) uniquement dans le but de générer votre analyse. Il n'est pas utilisé pour entraîner des modèles d'IA et n'est ni partagé ni vendu à des tiers.",
+  "support.a4": "Oui. Le contenu de vos rêves est transmis à notre fournisseur d'IA (Anthropic) uniquement dans le but de générer votre analyse. Anthropic ne l'utilise pas pour entraîner ses modèles, et nous ne le vendons ni ne le partageons jamais avec des tiers. Par ailleurs, nous pouvons utiliser vos rêves et leurs analyses pour entraîner et améliorer notre propre modèle d'analyse des rêves — mais uniquement si vous y consentez explicitement dans Paramètres → Données et confidentialité (désactivé par défaut). Vous pouvez retirer votre consentement à tout moment, et la suppression de votre compte supprime ces données.",
   "support.q5": "L'application ne fonctionne pas. Que faire ?",
   "support.a5": "Essayez de fermer puis de rouvrir l'application. Si le problème persiste, déconnectez-vous puis reconnectez-vous depuis les Réglages. Si les problèmes continuent, contactez-nous à l'adresse e-mail ci-dessus en décrivant le problème et en précisant le modèle de votre appareil.",
   "support.q6": "Quelles langues sont prises en charge ?",
@@ -106,7 +106,7 @@ registerLang("fr", {
       <li><p><strong>Paiements intégrés Google Play</strong> — <a href="https://www.google.com/policies/privacy/" target="_blank">Politique de confidentialité</a></p></li>
     </ul>
     <h3>Intelligence artificielle — Analyse des rêves</h3>
-    <p>Lorsque vous soumettez une description de rêve pour analyse, ce contenu est transmis à l'API Claude d'Anthropic pour traitement. Le Contenu des rêves n'est pas utilisé pour entraîner des modèles d'IA et n'est pas vendu à des tiers.</p>
+    <p>Lorsque vous soumettez une description de rêve pour analyse, ce contenu est transmis à l'API Claude d'Anthropic pour traitement. Anthropic ne l'utilise pas pour entraîner ses modèles, et nous ne le vendons ni ne le partageons jamais avec des tiers. Par ailleurs, nous pouvons utiliser vos rêves et leurs analyses pour entraîner et améliorer notre propre modèle d'analyse des rêves — mais uniquement si vous y consentez explicitement dans Paramètres → Données et confidentialité (désactivé par défaut). Vous pouvez retirer votre consentement à tout moment, et la suppression de votre compte supprime ces données.</p>
     <ul>
       <li><p><strong>Anthropic (API Claude)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">Politique de confidentialité</a></p></li>
     </ul>

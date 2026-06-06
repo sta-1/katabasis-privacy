@@ -48,7 +48,7 @@ registerLang("tr", {
   "support.q3": "Hesabımı nasıl silerim?",
   "support.a3": "Hesabını ve ilişkili tüm verileri istediğin zaman uygulama içindeki Ayarlar → Hesabı Sil bölümünden silebilirsin. Silme işlemi kalıcıdır ve geri alınamaz.",
   "support.q4": "Rüya verilerim gizli mi?",
-  "support.a4": "Evet. Rüya içeriğin yalnızca analizini oluşturmak amacıyla yapay zekâ sağlayıcımıza (Anthropic) iletilir. Yapay zekâ modellerini eğitmek için kullanılmaz, üçüncü taraflarla paylaşılmaz veya satılmaz.",
+  "support.a4": "Evet. Rüya içeriğin yalnızca analizini oluşturmak amacıyla yapay zekâ sağlayıcımıza (Anthropic) iletilir. Anthropic bunu modellerini eğitmek için kullanmaz ve biz üçüncü taraflara asla satmaz veya paylaşmayız. Ayrıca, rüyalarınızı ve analizlerini kendi rüya analizi modelimizi eğitmek ve geliştirmek için kullanabiliriz — ancak yalnızca Ayarlar → Veri ve Gizlilik bölümünden açıkça izin verirseniz (varsayılan kapalı). Rızanızı istediğiniz zaman geri çekebilirsiniz ve hesabınızı silmek bu verileri kaldırır.",
   "support.q5": "Uygulama çalışmıyor. Ne yapmalıyım?",
   "support.a5": "Uygulamayı kapatıp yeniden açmayı dene. Sorun devam ederse Ayarlar'dan çıkış yapıp tekrar giriş yapmayı dene. Hâlâ sorun yaşıyorsan, sorunun açıklaması ve cihaz modelinle birlikte yukarıdaki e-posta adresinden bize ulaş.",
   "support.q6": "Hangi diller destekleniyor?",
@@ -113,7 +113,7 @@ registerLang("tr", {
       <li><p><strong>Google Play Uygulama İçi Ödemeler</strong> — <a href="https://www.google.com/policies/privacy/" target="_blank">Gizlilik Politikası</a></p></li>
     </ul>
     <h3>Yapay Zekâ — Rüya Analizi</h3>
-    <p>Analiz için bir rüya açıklaması gönderdiğinizde, bu içerik işlenmek üzere Anthropic'in Claude API'sine iletilir. Rüya İçeriği, yapay zekâ modellerini eğitmek için kullanılmaz ve üçüncü taraflara satılmaz.</p>
+    <p>Analiz için bir rüya açıklaması gönderdiğinizde, bu içerik işlenmek üzere Anthropic'in Claude API'sine iletilir. Anthropic bunu modellerini eğitmek için kullanmaz ve biz üçüncü taraflara asla satmaz veya paylaşmayız. Ayrıca, rüyalarınızı ve analizlerini kendi rüya analizi modelimizi eğitmek ve geliştirmek için kullanabiliriz — ancak yalnızca Ayarlar → Veri ve Gizlilik bölümünden açıkça izin verirseniz (varsayılan kapalı). Rızanızı istediğiniz zaman geri çekebilirsiniz ve hesabınızı silmek bu verileri kaldırır.</p>
     <ul>
       <li><p><strong>Anthropic (Claude API)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">Gizlilik Politikası</a></p></li>
     </ul>

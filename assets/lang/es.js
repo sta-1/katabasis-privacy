@@ -42,7 +42,7 @@ registerLang("es", {
   "support.q3": "¿Cómo elimino mi cuenta?",
   "support.a3": "Puedes eliminar tu cuenta y todos los datos asociados en cualquier momento desde Ajustes → Eliminar cuenta dentro de la aplicación. La eliminación es permanente y no se puede deshacer.",
   "support.q4": "¿Mis datos de sueños son privados?",
-  "support.a4": "Sí. El contenido de tus sueños se transmite a nuestro proveedor de IA (Anthropic) únicamente con el fin de generar tu análisis. No se utiliza para entrenar modelos de IA ni se comparte ni se vende a terceros.",
+  "support.a4": "Sí. El contenido de tus sueños se transmite a nuestro proveedor de IA (Anthropic) únicamente con el fin de generar tu análisis. Anthropic no lo utiliza para entrenar sus modelos, y nosotros nunca lo vendemos ni lo compartimos con terceros. Además, podemos usar tus sueños y sus análisis para entrenar y mejorar nuestro propio modelo de análisis de sueños, pero solo si lo activas explícitamente en Ajustes → Datos y privacidad (desactivado de forma predeterminada). Puedes retirar tu consentimiento en cualquier momento, y eliminar tu cuenta borra estos datos.",
   "support.q5": "La aplicación no funciona. ¿Qué debo hacer?",
   "support.a5": "Prueba a cerrar y volver a abrir la aplicación. Si el problema persiste, cierra sesión y vuelve a iniciarla desde Ajustes. Si sigues teniendo problemas, escríbenos al correo electrónico anterior con una descripción del problema y el modelo de tu dispositivo.",
   "support.q6": "¿Qué idiomas son compatibles?",
@@ -106,7 +106,7 @@ registerLang("es", {
       <li><p><strong>Pagos integrados de Google Play</strong> — <a href="https://www.google.com/policies/privacy/" target="_blank">Política de Privacidad</a></p></li>
     </ul>
     <h3>Inteligencia artificial — Análisis de sueños</h3>
-    <p>Cuando usted envía una descripción de un sueño para su análisis, ese contenido se transmite a la API Claude de Anthropic para su procesamiento. El Contenido de los Sueños no se utiliza para entrenar modelos de IA ni se vende a terceros.</p>
+    <p>Cuando usted envía una descripción de un sueño para su análisis, ese contenido se transmite a la API Claude de Anthropic para su procesamiento. Anthropic no lo utiliza para entrenar sus modelos, y nosotros nunca lo vendemos ni lo compartimos con terceros. Además, podemos usar tus sueños y sus análisis para entrenar y mejorar nuestro propio modelo de análisis de sueños, pero solo si lo activas explícitamente en Ajustes → Datos y privacidad (desactivado de forma predeterminada). Puedes retirar tu consentimiento en cualquier momento, y eliminar tu cuenta borra estos datos.</p>
     <ul>
       <li><p><strong>Anthropic (API Claude)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">Política de Privacidad</a></p></li>
     </ul>

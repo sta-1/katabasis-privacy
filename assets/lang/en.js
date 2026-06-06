@@ -48,7 +48,7 @@ registerLang("en", {
   "support.q3": "How do I delete my account?",
   "support.a3": "You can delete your account and all associated data at any time from Settings → Delete Account within the app. Deletion is permanent and cannot be undone.",
   "support.q4": "Is my dream data private?",
-  "support.a4": "Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. It is not used to train AI models and is not shared with or sold to third parties.",
+  "support.a4": "Yes. Your dream content is transmitted to our AI provider (Anthropic) solely for the purpose of generating your analysis. Anthropic does not use it to train its models, and we never sell or share it with third parties. Separately, we may use your dreams and their analyses to train and improve our own dream-analysis model — but only if you explicitly opt in under Settings → Data & Privacy (off by default). You can withdraw your consent at any time, and deleting your account removes this data.",
   "support.q5": "The app isn't working. What should I do?",
   "support.a5": "Try closing and reopening the app. If the issue persists, try logging out and back in from Settings. If you're still experiencing problems, contact us at the email above with a description of the issue and your device model.",
   "support.q6": "Which languages are supported?",
@@ -113,7 +113,7 @@ registerLang("en", {
       <li><p><strong>Google Play In-App Payments</strong> — <a href="https://www.google.com/policies/privacy/" target="_blank">Privacy Policy</a></p></li>
     </ul>
     <h3>Artificial Intelligence — Dream Analysis</h3>
-    <p>When You submit a dream description for analysis, that content is transmitted to Anthropic's Claude API for processing. Dream Content is not used to train AI models and is not sold to third parties.</p>
+    <p>When You submit a dream description for analysis, that content is transmitted to Anthropic's Claude API for processing. Anthropic does not use it to train its models, and we never sell or share it with third parties. Separately, we may use your dreams and their analyses to train and improve our own dream-analysis model — but only if you explicitly opt in under Settings → Data & Privacy (off by default). You can withdraw your consent at any time, and deleting your account removes this data.</p>
     <ul>
       <li><p><strong>Anthropic (Claude API)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">Privacy Policy</a></p></li>
     </ul>

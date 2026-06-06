@@ -42,7 +42,7 @@ registerLang("de", {
   "support.q3": "Wie lösche ich mein Konto?",
   "support.a3": "Sie können Ihr Konto und alle zugehörigen Daten jederzeit in der App unter Einstellungen → Konto löschen entfernen. Die Löschung ist dauerhaft und kann nicht rückgängig gemacht werden.",
   "support.q4": "Sind meine Traumdaten privat?",
-  "support.a4": "Ja. Ihre Trauminhalte werden ausschließlich zum Zweck der Erstellung Ihrer Analyse an unseren KI-Anbieter (Anthropic) übermittelt. Sie werden nicht zum Training von KI-Modellen verwendet und nicht an Dritte weitergegeben oder verkauft.",
+  "support.a4": "Ja. Ihre Trauminhalte werden ausschließlich zum Zweck der Erstellung Ihrer Analyse an unseren KI-Anbieter (Anthropic) übermittelt. Anthropic verwendet diese Daten nicht zum Training seiner Modelle, und wir verkaufen sie niemals und geben sie nicht an Dritte weiter. Darüber hinaus können wir Ihre Träume und deren Analysen verwenden, um unser eigenes Traumanalyse-Modell zu trainieren und zu verbessern — jedoch nur, wenn Sie unter Einstellungen → Daten & Datenschutz ausdrücklich zustimmen (standardmäßig deaktiviert). Sie können Ihre Einwilligung jederzeit widerrufen, und das Löschen Ihres Kontos entfernt diese Daten.",
   "support.q5": "Die App funktioniert nicht. Was soll ich tun?",
   "support.a5": "Schließen Sie die App und öffnen Sie sie erneut. Falls das Problem weiterhin besteht, melden Sie sich in den Einstellungen ab und wieder an. Wenn weiterhin Probleme auftreten, kontaktieren Sie uns unter der oben genannten E-Mail-Adresse mit einer Beschreibung des Problems und Ihrem Gerätemodell.",
   "support.q6": "Welche Sprachen werden unterstützt?",
@@ -106,7 +106,7 @@ registerLang("de", {
       <li><p><strong>Google Play In-App-Zahlungen</strong> — <a href="https://www.google.com/policies/privacy/" target="_blank">Datenschutzrichtlinie</a></p></li>
     </ul>
     <h3>Künstliche Intelligenz — Traumanalyse</h3>
-    <p>Wenn Sie eine Traumbeschreibung zur Analyse übermitteln, wird dieser Inhalt zur Verarbeitung an die Claude-API von Anthropic übermittelt. Trauminhalte werden nicht zum Training von KI-Modellen verwendet und nicht an Dritte verkauft.</p>
+    <p>Wenn Sie eine Traumbeschreibung zur Analyse übermitteln, wird dieser Inhalt zur Verarbeitung an die Claude-API von Anthropic übermittelt. Anthropic verwendet diese Daten nicht zum Training seiner Modelle, und wir verkaufen sie niemals und geben sie nicht an Dritte weiter. Darüber hinaus können wir Ihre Träume und deren Analysen verwenden, um unser eigenes Traumanalyse-Modell zu trainieren und zu verbessern — jedoch nur, wenn Sie unter Einstellungen → Daten & Datenschutz ausdrücklich zustimmen (standardmäßig deaktiviert). Sie können Ihre Einwilligung jederzeit widerrufen, und das Löschen Ihres Kontos entfernt diese Daten.</p>
     <ul>
       <li><p><strong>Anthropic (Claude API)</strong> — <a href="https://www.anthropic.com/privacy" target="_blank">Datenschutzrichtlinie</a></p></li>
     </ul>
